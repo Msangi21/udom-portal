@@ -138,7 +138,7 @@ class ShowProductsController extends Controller
     public function othercategories(Request $request,$id){
         $req = $id;
 
-        $select = Products::where('main_id','LIKE',"%{$req}%")->latest()->paginate(40);
+        $select = Products::where('main_id','=',$req)->latest()->paginate(40);
         $count = count($select);
 
         return view('dashboard.customer.link',compact('select','req','count'));
