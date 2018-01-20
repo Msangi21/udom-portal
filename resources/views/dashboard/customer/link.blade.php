@@ -20,7 +20,7 @@ img{
 </style>
 <div class="container-fluid">
 	<div class=" hidden-xs">
-	<div class="row" style="padding-left: 12px;">
+	<div class="row" style="padding-left: 12px;"> 
 		<h4>Categories</h4>
 	</div>
 	<div class="col-sm-2">
