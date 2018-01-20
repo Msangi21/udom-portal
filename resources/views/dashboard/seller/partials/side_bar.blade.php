@@ -38,7 +38,9 @@
                                 </tr>
                                 <tr>
                                     <td>
+                                        @auth
                                         <span class="glyphicon glyphicon-user text-success"></span><a href="/profile/{{Auth::User()->id}}/edit"><span style="padding: 12px">Profile</span></a>
+                                        @endauth
                                     </td>
                                 </tr>
                                 <tr>
@@ -53,7 +55,9 @@
                                 </tr>
                                 <tr>
                                     <td>
+                                        @auth
                                         <span class="glyphicon glyphicon-stats text-success"></span><a href="/address/{{Auth::User()->id}}/edit"><span style="padding: 12px">Status</span></a>
+                                        @endauth
                                         
                                             @if(Auth::User()->status == false)
                                             <span class="badge" style="background: red">
