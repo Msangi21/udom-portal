@@ -16,7 +16,7 @@ class UserTableSeeder extends Seeder
         	'last_name' => 'Msangi',
         	'email' => 'alaminhamadi@gmail.com',
         	'password' => bcrypt('akashi'),
-        	'status' => true,
+        	'status' => false,
         	'isAdmin' => true,
         	'created_at' => '2018-01-20 10:50:03',
         	'updated_at' => '2018-01-20 10:50:03'
