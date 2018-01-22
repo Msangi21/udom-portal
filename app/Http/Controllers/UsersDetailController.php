@@ -88,20 +88,20 @@ class UsersDetailController extends Controller
 
         $sql = "update user_details set user_id = '$user_id',college_id='$collage_id',mobile1='$mobile1',mobile2='$mobile2',block_no='$block_no',room='$room' where user_id = $user_id";
 
-        $status = "update users set status =$status where id='$user_id'";
+        $status = "update users set status ='$status' where id='$user_id'";
         $insert = "insert into user_details (user_id,college_id,mobile1,mobile2,block_no,room) values ('$user_id','$collage_id','$mobile1','$mobile2','$block_no','$room')";
 
         $select = "select * From user_details where user_id = '$user_id'";
         $countRow = DB::select($select);
         if(count($countRow) > 0){
             $result = DB::update($sql);
-            if($result){
+            if($result and DB::update($status)){
                 return redirect()->back()->with('message','Edit Successful');
             }else{
                 return redirect()->back()->with('error','Edit Fail');
             }
         }else{
-            if(DB::insert($insert) and DB::insert($status)){
+            if(DB::insert($insert) ){
                 return redirect()->back()->with('message','Status Complete');
             }else{
                 return redirect()->back()->with('error','Something Wrong');
