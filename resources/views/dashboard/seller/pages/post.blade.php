@@ -89,7 +89,7 @@ body
        <h3 style="padding: 5px;">Posting Area</h3>
        <hr>
        <div class="panel-body">
-         @if(Auth::User()->status == true)
+         @if(Auth::User()->status == 1)
 
          <div class="col-sm-6 col-sm-offset-1" style="padding: 15px;">
           @if($errors->any())
