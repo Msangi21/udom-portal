@@ -55,7 +55,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        @auth
+                                       
                                         <span class="glyphicon glyphicon-stats text-success"></span><a href="/address/{{Auth::User()->id}}/edit"><span style="padding: 12px">Status</span></a>
 
                                         
@@ -69,7 +69,7 @@
                                             </span>
                                             @endif
 
-                                            @endauth
+                                            
                                         
                                     </td>
                                 </tr>
