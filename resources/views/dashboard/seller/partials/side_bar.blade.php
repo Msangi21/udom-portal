@@ -55,7 +55,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                       @if(Auth::check())
+                                       
                                         <span class="glyphicon glyphicon-stats text-success"></span><a href="/address/{{Auth::User()->id}}/edit"><span style="padding: 12px">Status</span></a>
 
                                         
@@ -67,8 +67,6 @@
                                             <span class="badge" style="background: green">
                                             Complete
                                             </span>
-                                            @endif
-
                                             @endif
 
                                             
