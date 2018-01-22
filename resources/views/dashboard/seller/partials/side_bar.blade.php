@@ -56,7 +56,7 @@
                                 <tr>
                                     <td>
                                        
-                                        <span class="glyphicon glyphicon-stats text-success"></span><a href="/address/{{Auth::id()}}/edit"><span style="padding: 12px">Status</span></a>
+                                        <span class="glyphicon glyphicon-stats text-success"></span><a href="/address/{{Auth::id()}}/edit"><span style="padding: 12px">Status</span></a> 
 
                                         
                                             @if(Auth::User()->status == false)
