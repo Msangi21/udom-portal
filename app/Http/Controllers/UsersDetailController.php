@@ -101,7 +101,7 @@ class UsersDetailController extends Controller
                 return redirect()->back()->with('error','Edit Fail');
             }
         }else{
-            if(DB::insert($insert) ){
+            if(DB::insert($insert and DB::update($status)) ){
                 return redirect()->back()->with('message','Status Complete');
             }else{
                 return redirect()->back()->with('error','Something Wrong');

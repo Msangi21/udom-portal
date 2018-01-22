@@ -37,14 +37,14 @@
                                             <!-- Carousel items -->
                                             <div class="carousel-inner">
                                                 <div class="active item" data-slide-number="0">
-                                                    <img src="{{ URL::to('/') }}/storage/{{ $products->image_path }}"></div>
+                                                    <img src="{{ Request::getSchemeAndHttpHost() }}/storage/{{ $products->image_path }}"></div>
 
                                                     @if(count($images) > 0)
 
                                                     @foreach($images as $key=>$image)
 
                                                     <div class="item" data-slide-number="{{ $key }}">
-                                                        <img src="{{ URL::to('/') }}/storage/{{ $image->image_path }}"></div>
+                                                        <img src="{{ Request::getSchemeAndHttpHost() }}/storage/{{ $image->image_path }}"></div>
 
                                                         @endforeach
 
@@ -72,7 +72,7 @@
                                         <ul class="hide-bullets">
                                             <li class="col-sm-4">
                                                 <a class="thumbnail" id="carousel-selector-0">
-                                                    <img src="{{ URL::to('/') }}/storage/{{ $products->image_path }}">
+                                                    <img src="{{ Request::getSchemeAndHttpHost() }}/storage/{{ $products->image_path }}">
                                                 </a>
                                             </li>
 
@@ -84,7 +84,7 @@
 
                                             <li class="col-sm-4">
                                                 <a class="thumbnail" id="carousel-selector-{{ $key+1 }}">
-                                                    <img src="{{ URL::to('/') }}/storage/{{ $image->image_path }}">
+                                                    <img src="{{ Request::getSchemeAndHttpHost() }}/storage/{{ $image->image_path }}">
                                                 </a>
                                             </li>
 
@@ -156,7 +156,7 @@
                                 <div class="col-xs-12">
                                     <ul class="bxslider">
                                         <li class="img-responsive">
-                                            <img src="{{ URL::to('/') }}/storage/{{ $products->image_path }}">
+                                            <img src="{{ Request::getSchemeAndHttpHost() }}/storage/{{ $products->image_path }}">
                                         </li>
 
                                         @if(count($images) > 0)
@@ -164,7 +164,7 @@
                                         @foreach($images as $image)
 
                                         <li class="img-responsive">
-                                            <img src="{{ URL::to('/') }}/storage/{{ $image->image_path }}">
+                                            <img src="{{ Request::getSchemeAndHttpHost() }}/storage/{{ $image->image_path }}">
                                         </li>
 
                                         @endforeach

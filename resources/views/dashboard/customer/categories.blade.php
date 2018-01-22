@@ -27,7 +27,7 @@
                 <div class="col-sm-3"><a href="/item/{{ $item->id }}">
                   <div class="col-item">
                     <div class="photo">
-                      <img src="{{ URL::to('/') }}/storage/{{ $item->image_path }}" class="img-responsive"  alt="a" />
+                      <img src="{{ Request::getSchemeAndHttpHost()}}/storage/{{ $item->image_path }}" class="img-responsive"  alt="a" />
                     </div>
 
                     <div class="info">
@@ -97,7 +97,7 @@
                         <div class="col-sm-3"><a href="/{$item->id}">
                           <div class="col-item">
                             <div class="photo">
-                              <img src="{{ URL::to('/') }}/storage/{{ $item->image_path }}" class="img-responsive"  alt="a" />
+                              <img src="{{ Request::getSchemeAndHttpHost() }}/storage/{{ $item->image_path }}" class="img-responsive"  alt="a" />
                             </div>
                             <div class="info">
                               <div class="row">
@@ -207,7 +207,7 @@
               <div class="col-xs-4 no-padding"><a href="/item/{{ $item_for_phone->id }}">
                 <div class="thumbnail">
 
-                  <img src="{{ URL::to('/') }}/storage/{{ $item_for_phone->image_path }}" alt="" style="width:100%; height: 90px;">
+                  <img src="{{ Request::getSchemeAndHttpHost() }}/storage/{{ $item_for_phone->image_path }}" alt="" style="width:100%; height: 90px;">
                   <div class="caption">
                     <p>{{ str_limit($item_for_phone->product_name,25) }}</p>
                   </div>
@@ -236,7 +236,7 @@
               <div class="col-xs-4 no-padding"><a href="/item/{{ $item_for_phone->id }}">
                 <div class="thumbnail">
 
-                  <img src="{{ URL::to('/') }}/storage/{{ $item_for_phone->image_path }}" alt="" style="width:100%; height: 90px;">
+                  <img src="{{ Request::getSchemeAndHttpHost() }}/storage/{{ $item_for_phone->image_path }}" alt="" style="width:100%; height: 90px;">
                   <div class="caption">
                     <p>{{ str_limit($item_for_phone->product_name,25) }}</p>
                   </div>
