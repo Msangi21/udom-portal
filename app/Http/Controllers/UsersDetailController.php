@@ -88,7 +88,7 @@ class UsersDetailController extends Controller
 
         $sql = "update user_details set user_id = '$user_id',college_id='$collage_id',mobile1='$mobile1',mobile2='$mobile2',block_no='$block_no',room='$room' where user_id = $user_id";
 
-        $status = "update users set status ='$status' where id='$user_id'";
+        $status = "update users set status =$status where id='$user_id'";
         $insert = "insert into user_details (user_id,college_id,mobile1,mobile2,block_no,room) values ('$user_id','$collage_id','$mobile1','$mobile2','$block_no','$room')";
 
         $select = "select * From user_details where user_id = '$user_id'";
