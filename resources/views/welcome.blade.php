@@ -17,6 +17,7 @@
   <link rel="stylesheet" type="text/css" href="../css/menu.css">
   <link rel="stylesheet" type="text/css" href="../css/font.css">
 
+
   <link rel="stylesheet" type="text/css" href="../js/jquery-ui/themes/base/theme.css">
   <link rel="stylesheet" type="text/css" href="../js/jquery-ui/themes/base/menu.css">
   <link rel="stylesheet" type="text/css" href="../js/jquery-ui/themes/base/autocomplete.css">
@@ -201,12 +202,13 @@
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}"></script>
 
-{{-- <script type="text/javascript" src="../js/jquery.min.js"></script> --}}
+<script type="text/javascript" src="../js/jquery.min.js"></script>
 <script type="text/javascript" src="../js/bootstrap.js"></script>
 <script type="text/javascript" src="../js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../js/jquery.bxslider.js"></script>
 {{-- <script type="text/javascript" src="../js/jquery-ui/ui/widgets/autocomplete.js"></script> --}}
 <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.js" ></script>
+
 
 
 
