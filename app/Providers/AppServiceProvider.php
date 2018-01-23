@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Providers;
+use Illuminate\Support\Facades\URL;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -11,6 +12,9 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
+
+    
+
     public function boot()
     {
         //
@@ -24,5 +28,10 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
+    }
+
+    // Force SSL in production
+    if ($this->app->environment() == 'production') {
+        URL::forceScheme('https');
     }
 }
