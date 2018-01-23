@@ -17,7 +17,10 @@ class AppServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        //
+        if(env('APP_ENV') !== 'local')
+        {
+            $url->forceSchema('https');
+        }
     }
 
     /**
@@ -30,7 +33,7 @@ class AppServiceProvider extends ServiceProvider
         //
     }
 
-    // // Force SSL in production
+    // Force SSL in production
     // if ($this->app->environment() == 'production') {
     //     URL::forceScheme('https');
     // }
