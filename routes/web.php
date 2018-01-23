@@ -11,6 +11,12 @@
 |
 */
 
+
+if (App::environment('production')) {
+    URL::forceScheme('https');
+}
+
+
 Route::get('/',function(){
 	 $electronics = App\Products::where('main_id',1)->latest()->paginate(4);
 	 $electronics_phone = App\Products::where('main_id',1)->latest()->paginate(3);
