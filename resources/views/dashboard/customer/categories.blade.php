@@ -28,7 +28,7 @@
                   <div class="col-item">
                     <div class="photo">
                       <img src="{{ Request::getSchemeAndHttpHost()}}/storage/{{ $item->image_path }}" class="img-responsive"  alt="a" />
-                    </div>
+                    </div> 
 
                     <div class="info">
                       <div class="row">
