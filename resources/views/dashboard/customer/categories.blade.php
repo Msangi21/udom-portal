@@ -27,7 +27,7 @@
                 <div class="col-sm-3"><a href="/item/{{ $item->id }}">
                   <div class="col-item">
                     <div class="photo">
-                      <img src="{{ Request::getSchemeAndHttpHost()}}/storage/{{ $item->image_path }}" class="img-responsive"  alt="a" />
+                      <img src="{{Request::getSchemeAndHttpHost() }}/storage/{{ $item->image_path }}" class="img-responsive"  alt="a" />
                     </div> 
 
                     <div class="info">

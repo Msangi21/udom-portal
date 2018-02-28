@@ -78,7 +78,7 @@ class ProductiesController extends Controller
              $imageName = $image->getClientOriginalName();
 
              
-             $image_path = $image->store('upload', 'public');
+             $image_path = $image->store('sub_image', 'public');
              DB::table('images')->insert([
                 ['user_id' => $id,'products_id'=>$prod_id,'image_path' => $image_path,'created_at' => $now,'updated_at' => $now],
             ]);
