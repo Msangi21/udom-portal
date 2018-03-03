@@ -50,7 +50,29 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <span class="glyphicon glyphicon-plus text-info"></span><a href=""><span style="padding: 12px">Upgrade</span></a>
+                                        <span class="glyphicon glyphicon-plus text-info"></span><a href="/accounts"><span style="padding: 12px">My Acount</span></a>
+                                        
+                                            @if($num != 0)
+                                                @if($result->account_level == 1)
+                                                <span class="badge" style="background-color:yellow; color:black ">
+                                                Offer, A Free
+                                                </span>
+                                                @elseif($result->account_level == 2)
+                                                <span class="badge" style="background-color:orange; color:black ">
+                                                Standard Level
+                                                </span>
+                                                @elseif($result->account_level == 3)
+                                                <span class="badge" style="background-color:#f90606; color:black ">
+                                                Primium Level
+                                                </span>
+                                                @endif
+                                            @else
+                                            <span class="badge" style="background-color: red">
+                                            Get Account Now!
+                                            </span>
+                                            @endif
+
+                                         
                                     </td>
                                 </tr>
                                 <tr>

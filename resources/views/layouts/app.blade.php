@@ -45,6 +45,21 @@
     .carousel-inner>.item>img, .carousel-inner>.item>a>img {
         width: 100%;
     }
+
+    
+            .status {
+                font-family: 'Source Sans Pro', sans-serif;
+            }
+            .status .panel-title {
+                font-family: 'Oswald', sans-serif;
+                font-size: 72px;
+                font-weight: bold;
+                color: #fff;
+                line-height: 45px;
+                padding-top: 20px;
+                letter-spacing: -0.8px;
+            }
+   
 </style>
 </head>
 <body style="background-color: #edeff2">
@@ -99,6 +114,20 @@
                             </li>
                             <li><a href="password/reset ">Change password</a></li>
                         </ul>
+                    </li>
+                    <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" style="color: white;">
+                                    <span class="glyphicon glyphicon-envelope"></span>
+                                    <span style="background:red" class="badge badge-important">1</span>
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu" >
+                                        <li><a href="/accounts" style="color:red; font-size:17px">
+                                            Your Account Has Expired<hr>
+                                            Please Click Here To Upgrade<hr>
+                                        </a></li>
+             
+                                      </ul>
                     </li>
                     @endguest
                 </ul>

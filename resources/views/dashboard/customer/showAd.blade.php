@@ -9,47 +9,7 @@
 <div class="row hidden-xs">
 
 <div class="col-sm-2">
-    <ul >
-      <li><a href="#">Electrical</a>
-        <ul>
-          <li><a href="{{ URL::to('/link/1') }}">Cell Phone & Accessories</a></li>
-          <li><a href="{{ URL::to('/link/2') }}">Cameras</a></li>
-          <li><a href="{{ URL::to('/link/3') }}">Tablets</a></li>
-          <li><a href="{{ URL::to('/link/4') }}">Computers</a></li>
-        </ul>
-      </li>
-
-      <li><a href="#">Fashion</a>
-        <ul >
-          <li><a href="{{ URL::to('/link/5') }}">Men's</a></li>
-          <li><a href="{{ URL::to('/link/6') }}">Women's</a></li>
-          <li><a href="{{ URL::to('/link/7') }}">Kid's</a></li>
-        </ul>
-      </li>
-
-      <li><a href="#">Motor's</a>
-        <ul>
-          <li><a href="{{ URL::to('/link/8') }}">Cars</a></li>
-          <li><a href="{{ URL::to('/link/9') }}">Motorcycles</a></li>
-          <li><a href="{{ URL::to('/link/10') }}">Parts & Accessories</a></li>
-        </ul>
-      </li>
-
-      <li><a href="#">Home</a>
-        <ul>
-          <li><a href="{{ URL::to('/link/11') }}">Furniture</a></li>
-          <li><a href="{{ URL::to('/link/12') }}">Kitchen Tools</a></li>
-        </ul>
-      </li>
-
-      <li><a href="#">Sports</a>
-        <ul >
-          <li><a href="{{ URL::to('/link/13') }}">Exercise & Fitness</a></li>
-          <li><a href="{{ URL::to('/link/14') }}">Tools</a></li>
-        </ul>
-      </li>
-
-    </ul>
+    @include('dashboard.partials.customer_side_bar')
   </div>
 
 

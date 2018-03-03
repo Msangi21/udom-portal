@@ -95,13 +95,15 @@ class UsersDetailController extends Controller
         $countRow = DB::select($select);
         if(count($countRow) > 0){
             $result = DB::update($sql);
-            if($result and DB::update($status)){
+            if($result){
+                DB::update($status);
                 return redirect()->back()->with('message','Edit Successful');
             }else{
                 return redirect()->back()->with('error','Edit Fail');
             }
         }else{
-            if(DB::insert($insert and DB::update($status)) ){
+            if(DB::insert($insert) ){
+                DB::update($status);
                 return redirect()->back()->with('message','Status Complete');
             }else{
                 return redirect()->back()->with('error','Something Wrong');

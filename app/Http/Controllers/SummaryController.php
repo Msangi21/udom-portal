@@ -113,9 +113,19 @@ class SummaryController extends Controller
      */
     public function destroy(Products $products,$id)
     {
+        
         $products = Products::findOrFail($id);
-        Storage::delete($products->image_path);
-        // unlink(public_path($products->image_path));
+        $main_image = $products->image_path;
+        Storage::disk('public')->delete($main_image);
+
+        $sql = DB::select('select * from images where products_id = ?', [$id]);
+        
+        foreach ($sql as $item) {
+            Storage::disk('public')->delete($item->image_path);
+            
+        }
+
+        
         $products->delete();
 
 

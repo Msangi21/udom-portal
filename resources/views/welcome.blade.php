@@ -150,42 +150,42 @@
     <nav class="dropdownmenu" >
       <ul>
         <li><a href="/">Home</a></li>
-        <li><a href="#">Electrical</a>
+        <li><a href="/electrical/1">Electrical</a>
           <ul id="submenu">
-            <li><a href="/link/1">Cell Phone & Accessories</a></li>
-            <li><a href="/link/2">Cameras</a></li>
-            <li><a href="/link/3">Tablets</a></li>
-            <li><a href="/link/4">Computers</a></li>
+            <li><a href="/page/1">Cell Phone & Accessories</a></li>
+            <li><a href="/page/2">Cameras</a></li>
+            <li><a href="/page/3">Tablets</a></li>
+            <li><a href="/page/4">Computers</a></li>
           </ul>
         </li>
-        <li><a href="#">Fashion</a>
+        <li><a href="/fashion/2">Fashion</a>
           <ul id="submenu">
-            <li><a href="/link/5">Men's</a></li>
-            <li><a href="/link/6">Women's</a></li>
-            <li><a href="/link/7">Kid's</a></li>
+            <li><a href="/page/5">Men's</a></li>
+            <li><a href="/page/6">Women's</a></li>
+            <li><a href="/page/7">Kid's</a></li>
           </ul>
         </li>
-        <li><a href="#">Motor's</a>
+        <li><a href="/motors/3">Motor's</a>
           <ul id="submenu">
-            <li><a href="/link/8">Cars</a></li>
-            <li><a href="/link/9">Motorcycles</a></li>
-            <li><a href="/link/10">Parts & Accessories</a></li>
+            <li><a href="/page/8">Cars</a></li>
+            <li><a href="/page/9">Motorcycles</a></li>
+            <li><a href="/page/10">Parts & Accessories</a></li>
           </ul>
         </li>
-        <li><a href="#">Home</a>
+        <li><a href="/home/4">Home</a>
           <ul id="submenu">
-            <li><a href="/link/11">Furniture</a></li>
-            <li><a href="/link/12">Kitchen Tools</a></li>
+            <li><a href="/page/11">Furniture</a></li>
+            <li><a href="/page/12">Kitchen Tools</a></li>
           </ul>
         </li>
-        <li><a href="#">Sports</a>
+        <li><a href="/sports/5">Sports</a>
           <ul id="submenu">
-            <li><a href="/link/13">Exercise & Fitness</a></li>
-            <li><a href="/link/14">Tools</a></li>
+            <li><a href="/page/13">Exercise & Fitness</a></li>
+            <li><a href="/page/14">Tools</a></li>
           </ul>
         </li>
         <li>
-          <a href="">About us</a>
+          <a href="#">About us</a>
         </li>
       </ul>
     </nav>

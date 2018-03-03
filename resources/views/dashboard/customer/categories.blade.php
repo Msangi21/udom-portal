@@ -49,7 +49,7 @@
                           </div>
                           <div class="separator clear-left">
                             <p class="btn-add">
-                              <a href="http://www.jquery2dotnet.com" class="hidden-sm">{{ number_format($item->price) }} TSH</a></p>
+                              <a href="/item/{{ $item->id }}" class="hidden-sm">{{ number_format($item->price) }} TSH</a></p>
                               <p class="btn-details">
                                 <i class="fa fa-list"></i><a href="/item/{{ $item->id }}" class="hidden-sm">More details</a></p>
                               </div>
@@ -66,7 +66,7 @@
                         <div class="alert alert-info">
                           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                           <strong>No any product uploaded yet..!</strong>
-                          Be the first to add your product here <a href="">Add</a>
+                          Be the first to add your product here <a href="/login">Add</a>
                         </div>
 
                         @endif
@@ -133,7 +133,7 @@
                                 <div class="alert alert-info">
                                   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                                   <strong>No any product uploaded yet..!</strong>
-                                  Be the first to add your product here <a href="">Add</a>
+                                  Be the first to add your product here <a href="/login">Add</a>
                                 </div>
 
                                 @endif
@@ -219,7 +219,7 @@
               <div class="alert alert-info">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                 <strong>No any product uploaded yet..!</strong>
-                Be the first to add your product here <a href="">Add</a>
+                Be the first to add your product here <a href="/login">Add</a>
               </div>
 
               @endif
@@ -248,7 +248,7 @@
               <div class="alert alert-info">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                 <strong>No any product uploaded yet..!</strong>
-                Be the first to add your product here <a href="">Add</a>
+                Be the first to add your product here <a href="/login">Add</a>
               </div>
 
               @endif

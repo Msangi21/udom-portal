@@ -10,9 +10,9 @@
             <div class="panel">
 
                 <h3 style="padding: 5px;">{{ $products->product_name }}
-
-                    <a href="/home" class="pull-right" style="padding-right: 15px">Back</a>
-
+                        <span class="pull-right" style="margin-right:17px">
+                                <a href="/home" class="btn btn-info " role="button">Home</a>
+                             </span>
                 </h3>
                 
 

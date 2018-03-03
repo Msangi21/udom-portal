@@ -11,7 +11,8 @@
 |
 */
 
-
+use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 
 
 Route::get('/',function(){
@@ -24,9 +25,14 @@ Route::get('/',function(){
 
 Route::get('/search','ShowProductsController@search');
 
-Route::get('/link/{id}','ShowProductsController@selectedlink');
+Route::get('/page/{id}','ShowProductsController@selectedlink');
 
 Route::get('/others/{id}','ShowProductsController@othercategories');
+Route::get('/electrical/{id}','ShowProductsController@othercategories');
+Route::get('/fashion/{id}','ShowProductsController@othercategories');
+Route::get('/motors/{id}','ShowProductsController@othercategories');
+Route::get('/home/{id}','ShowProductsController@othercategories');
+Route::get('/sports/{id}','ShowProductsController@othercategories');
 
 Route::get('/searchajax','ShowProductsController@autoComplete');
 
@@ -64,6 +70,97 @@ Route::group(['middleware' => 'auth'],function(){
 
 	//Route::get('/home', 'HomeController@index')->name('home');
 	Route::resource('/home','SummaryController');
+
+	//Route::get('/home','UserAccountController');
+	View::composer('dashboard.seller.partials.side_bar', function ($view) {
+		$user_id = Auth::user()->id;
+
+//register user to free account
+		$result1 = DB::table('user_payments')
+							->select('account_level')
+							->where('user_id','=',$user_id)
+							->get();
+		$num1 = Count($result1);
+
+		if($num1 == 0){
+			DB::table('user_payments')
+					->insert(
+						[
+							'user_id'=>$user_id,'account_level'=>1,'created_at'=>Carbon::now(),'updated_at'=>Carbon::now()
+						]
+					);
+		}
+//check level of user account
+		$result = DB::table('user_payments')
+							->select('account_level')
+							->where('user_id','=',$user_id)
+							->first();
+		$num = Count($result);
+		
+		return $view->with(compact('result','num'));
+	});
+
+	//control expired account to upload ad's
+
+	View::composer('dashboard.seller.pages.post', function ($view) {
+
+		$user_id = Auth::user()->id;
+		$status = DB::table('user_payments')
+		->join('users','user_payments.user_id','=','users.id')
+		->select('user_payments.account_level as level','users.total_ads as total',
+		'user_payments.updated_at as time','users.first_name','users.last_name')
+		->where('user_payments.user_id',$user_id)
+		->first();
+
+			$level = $status->level;
+			$totalads = $status->total;
+			$time_remain = $status->time;
+
+			$enable = "enabled";
+			$ads_status = false;
+			$day_status = false;
+			
+
+			$days = (new Carbon($time_remain))->diffInDays();
+
+			//ad's remain
+			if($level == 1){
+			$ads_reamin = 2-$totalads;
+			$days_remain = 30 - $days;
+				if($ads_reamin == 0){
+					$ads_status = true;
+				}
+				if($days_remain == 0){
+					$day_status = true;
+					$ads_status = false;
+				}
+			}else if($level == 2){
+			$ads_reamin = 15-$totalads;
+			$days_remain = 60 - $days;
+				if($ads_reamin == 0){
+					$ads_status = true;
+				}
+				if($days_remain == 0){
+					$day_status = true;
+					$ads_status = false;
+				}
+			}else if($level == 3){
+			$ads_reamin = 50-$totalads;
+			$days_remain = 120 - $days;
+				if($ads_reamin == 0){
+					$ads_status = true;
+				}
+				if($days_remain == 0){
+					$day_status = true;
+					$ads_status = false;
+				}
+			}
+		return $view->with(compact('ads_status','day_status'));
+	});
+
+	Route::resource('/accounts','UserAccountController');
+
+
 });
 
 

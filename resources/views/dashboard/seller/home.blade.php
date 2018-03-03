@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 
 <head>
@@ -37,7 +36,7 @@
                         <p><b>Product Tile:</b></p> {{ $detail->product_name }}</p>
                         <p><b>Price:</b> <span style="color: red"> {{ $detail->price}} TSH</span></p>
                         <p><b>Product Description:</b><p> <pre>{{ str_limit($detail->description,50)}}</pre></p>
-                        <i>Uploaded:{{ $detail->created_at }}</i>
+                        <i>Uploaded:{{ (new Carbon\Carbon($detail->created_at))->diffForHumans() }}</i>
                         <div class="pull-right">
                             <a href="/home/{{ $detail->id }}/edit" class="btn btn-info" role="button"><span class="glyphicon glyphicon-edit"> </span> Edit</a>
                             <a href="/home/{{ $detail->id }}" class="btn btn-warning" role="button"><span class="glyphicon glyphicon-eye-open"></span> Show</a>
@@ -45,7 +44,7 @@
                             <a class="btn btn-danger" data-toggle="modal" href='#{{ $detail->id }}'>
                                 <span class="glyphicon glyphicon-trash">
                                 </span> Delete</a>
-                                <div class="modal fade" id="{{ $detail->id }}">
+                                <div class="modal " id="{{ $detail->id }}">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header ">
@@ -84,5 +83,6 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
     @endsection

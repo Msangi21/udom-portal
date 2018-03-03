@@ -16,7 +16,11 @@
                         </div>
                     @endif
 	<div id="collapse2" class="panel-collapse collapse in">
-		 <h3 style="padding: 5px">Personal Address</h3>
+		 <h3 style="padding: 5px">Personal Address
+        <span class="pull-right" style="margin-right:17px">
+            <a href="/home" class="btn btn-info " role="button">Home</a>
+         </span>
+     </h3>
      <hr>
            <form class="form-horizontal" role="form" method="POST" action="/address/{{ Auth::User()->id }}">
            	{{ csrf_field() }}

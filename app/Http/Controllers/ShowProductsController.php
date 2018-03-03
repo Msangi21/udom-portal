@@ -60,6 +60,7 @@ class ShowProductsController extends Controller
 
         foreach ($images as $key => $image) {
             $user_id = $image->user_id;
+            
         }
 
         $user_details = DB::table('user_details')

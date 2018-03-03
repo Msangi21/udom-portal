@@ -51,6 +51,13 @@ class ProductiesController extends Controller
             'images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:30000',
         ]);
 
+        //check the number of file uploaded
+
+        $num = DB::table('users')
+                        ->select('total_ads')
+                        ->where('id','=',$id)
+                        ->first();
+
         
 
         //main image and product details save in database
@@ -66,7 +73,13 @@ class ProductiesController extends Controller
         $product->description = $request->description;
         
 
-        $product->save(); 
+        if($product->save()){
+            $total_ads = $num->total_ads + 1;
+            DB::table('users')
+                    ->where('id','=',$id)
+                    ->update(['total_ads'=>$total_ads]);
+                    
+        } 
 
            //Multiple more images save in file and database
 

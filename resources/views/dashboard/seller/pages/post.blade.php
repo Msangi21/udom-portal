@@ -83,10 +83,29 @@ body
  <div class="row">
 
   <div class="col-md-10 col-md-offset-1">
+    @if($ads_status == true)
+      <div class="alert alert-danger alert-dismissible">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          <strong>You Have Reach The Maximum Number of Ads To Be Uploaded</strong>
+          <p><a href="/accounts">Upgrade Your Account Here</a></p> 
+        </div>
+      @endif
+
+      @if($day_status == true)
+      <div class="alert alert-danger alert-dismissible">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          <strong>Your Account Has Expired</strong>
+          <p><a href="/accounts">Upgrade Your Account Here</a></p> 
+        </div>
+      @endif
 
     <div class="panel ">
       <div id="collapse2" class="panel-collapse collapse in">
-       <h3 style="padding: 5px;">Posting Area</h3>
+       <h3 style="padding: 5px;">Posting Area
+         <span class="pull-right" style="margin-right:17px">
+           <a href="/home" class="btn btn-info " role="button">Home</a>
+        </span>
+       </h3>
        <hr>
        <div class="panel-body">
          @if(Auth::User()->status == true)
@@ -105,6 +124,9 @@ body
           </div>
           @endif
           <form id="product" action="/product" method="POST" enctype="multipart/form-data">
+            @if($ads_status == true || $day_status == true)
+            <fieldset disabled>
+              @endif
             {{ csrf_field() }}
 
             <div id="message"></div>
@@ -119,9 +141,9 @@ body
             <hr>
 
             <div class="form-group">
-              <label for="name">More Product Images (Option):</label>
+              <label for="name">More Product Images (Atleast 1):</label>
 
-              <input type="file" class="form-control" id="images" name="images[]" onchange="preview_images();"  multiple >
+              <input type="file" class="form-control" id="images" name="images[]" onchange="preview_images();" required  multiple >
 
             </div>
             <div class="row" id="image_preview"></div>
@@ -158,7 +180,7 @@ body
             </div>
 
             <div class="form-group">
-              <label for="email">Product Description:<span style="color: red;"><p>(Note: Please don't add your contacts info eg.phone_no. or location)</p></span></label>
+              <label for="email">Product Description:<span style="color: red;"><p>(Note: Please dont add your contacts info eg.phone_no. or location)</p></span></label>
               <textarea name="description" id="description" class="form-control" rows="4" required="required" placeholder=""></textarea>
             </div>
             <button type="submit" id="submit" class="btn btn-primary">Submit</button>

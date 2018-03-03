@@ -8,7 +8,11 @@
 
             <div class="panel">
 
-                <h3 style="padding: 5px;">Edit Product Details</h3>
+                <h3 style="padding: 5px;">Edit Product Details
+                        <span class="pull-right" style="margin-right:17px">
+                                <a href="/home" class="btn btn-info " role="button">Home</a>
+                             </span>
+                </h3>
 
                 <hr>
                 <div class="panel-body">
@@ -47,7 +51,7 @@
 
                     </div>
                     <div class="form-group">
-                       <label for="email">Product Description:<span style="color: red;"><p>(Note: Please don't add your contacts info eg.phone_no. or location)</p></span></label>
+                       <label for="email">Product Description:<span style="color: red;"><p>(Note: Please dont add your contacts info eg.phone_no. or location)</p></span></label>
                        <textarea name="description" id="description" class="form-control" rows="4" required="required" placeholder="">{{ isset($product->description) ? $product->description : old('name') }}</textarea>
                    </div>
                    <button type="submit" class="btn btn-primary">Submit</button>
@@ -58,6 +62,8 @@
 
 
    </div>
+</div>
+</div>
 </div>
 </div>
 </div>

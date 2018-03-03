@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Carbon\Carbon;
 
 class UserTableSeeder extends Seeder
 {
@@ -17,9 +18,10 @@ class UserTableSeeder extends Seeder
         	'email' => 'alaminhamadi@gmail.com',
         	'password' => bcrypt('akashi'),
         	'status' => false,
-        	'isAdmin' => true,
-        	'created_at' => '2018-01-20 10:50:03',
-        	'updated_at' => '2018-01-20 10:50:03'
+            'isAdmin' => true,
+            'total_ads'=> 0,
+        	'created_at'=>Carbon::now(),
+            'updated_at'=>Carbon::now()
         ]);
     }
 }
