@@ -81,7 +81,19 @@ class SummaryController extends Controller
     {
 
         $product = Products::where('id',$id)->first();
-        return view('/dashboard.seller.pages.edit_product',compact('product'));
+        $category = DB::table('main_products')
+                    ->select('id','name')->get();
+
+
+        $result = DB::table('products')
+                  ->join('main_products','products.main_id','=','main_products.id')
+                  ->join('product_categories','products.sub_category_id','=','product_categories.id')
+                  ->select('main_products.name as main','product_categories.category_name as category')
+                  ->where('products.id',$id)
+                  ->first();
+
+       // return $result->main;
+        return view('/dashboard.seller.pages.edit_product',compact('product','category','result'));
 
     }
 
@@ -94,15 +106,52 @@ class SummaryController extends Controller
      */
     public function update(Request $request, Products $products)
     {
-        $products->main_id = $request->main_id;
-        $products->sub_category_id = $request->sub_category_id;
-        $products->product_name = $request->product_name;
-        $products->price = $request->price;
-        $products->description = $request->description;
+        $id = $request->id;
+        $user_id = $request->user_id;
+        $main_id = $request->product_category;
+        $sub_category_id = $request->product_sub_category;
+        $product_name = $request->product_name;
+        $price = $request->price;
+        $description = $request->description;
 
-        $products->save();
+        
+        $stmt = DB::table('products')
+                ->where([
+                    [
+                        'id','=',$id
+                    ],
+                    [
+                        'user_id','=',$user_id
+                    ]
+                    
+                ])
+                ->update(
+                    [
+                        'main_id','=',$main_id
+                    ],
+                    [
+                        'sub_category_id','=',$sub_category_id
+                    ],
+                    [
+                        'product_name'=>$product_name
+                    ],
+                    [
+                        'price'=>$price
+                    ],
+                    [
+                        'description'=>$description
+                    ]
+                   
+               );
 
-        return redirect()->back()->with('message','Edit Successful');
+        if($stmt){
+            return redirect()->back()->with('message','Edit Successful');
+        }else{
+            return redirect()->back()->with('error','Edit Failed');
+            
+        }
+
+        
     }
 
     /**
@@ -115,7 +164,7 @@ class SummaryController extends Controller
     {
         
         $products = Products::findOrFail($id);
-        $main_image = $products->image_path;
+        $main_image = $image_path;
         Storage::disk('public')->delete($main_image);
 
         $sql = DB::select('select * from images where products_id = ?', [$id]);
@@ -126,7 +175,7 @@ class SummaryController extends Controller
         }
 
         
-        $products->delete();
+        $delete();
 
 
         

@@ -25,7 +25,7 @@
       </ul>
     </li>
 
-    <li><a href="/home/4">Home</a>
+    <li><a href="/homestools/4">Home</a>
       <ul>
         <li><a href="/page/11">Furniture</a></li>
         <li><a href="/page/12">Kitchen Tools</a></li>

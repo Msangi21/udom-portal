@@ -115,6 +115,7 @@
                             <li><a href="password/reset ">Change password</a></li>
                         </ul>
                     </li>
+                    @if($day_status == true)
                     <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" style="color: white;">
                                     <span class="glyphicon glyphicon-envelope"></span>
@@ -123,12 +124,31 @@
                                 </a>
                                 <ul class="dropdown-menu" >
                                         <li><a href="/accounts" style="color:red; font-size:17px">
-                                            Your Account Has Expired<hr>
-                                            Please Click Here To Upgrade<hr>
+                                            Your Account Has Expired<br>
+                                            <strong>Please Click Here To Upgrade</strong>
                                         </a></li>
              
                                       </ul>
                     </li>
+                    @endif
+
+                    @if($ads_status == true)
+                    <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" style="color: white;">
+                                    <span class="glyphicon glyphicon-envelope"></span>
+                                    <span style="background:red" class="badge badge-important">1</span>
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu" >
+                                        <li><a href="/accounts" style="color:red; font-size:17px">
+                                            You Have Reach The Maximum Number of Ads To Be Uploaded
+                                            <br>
+                                            <strong>Please Upgrade Your Account Here</strong> 
+                                        </a></li>
+             
+                                      </ul>
+                    </li>
+                    @endif
                     @endguest
                 </ul>
             </div>

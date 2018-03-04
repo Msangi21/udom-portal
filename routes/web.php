@@ -31,7 +31,7 @@ Route::get('/others/{id}','ShowProductsController@othercategories');
 Route::get('/electrical/{id}','ShowProductsController@othercategories');
 Route::get('/fashion/{id}','ShowProductsController@othercategories');
 Route::get('/motors/{id}','ShowProductsController@othercategories');
-Route::get('/home/{id}','ShowProductsController@othercategories');
+Route::get('/homestools/{id}','ShowProductsController@othercategories');
 Route::get('/sports/{id}','ShowProductsController@othercategories');
 
 Route::get('/searchajax','ShowProductsController@autoComplete');
@@ -63,6 +63,7 @@ Route::group(['middleware' => 'auth'],function(){
 
 	Route::resource('/profile', 'UsersProfileController');
 	Route::resource('/address','UsersDetailController');
+	Route::resource('/accounts','UserAccountController');
 
 	Route::get('login-register',function(){
 		return view('dashboard.seller.login-register');
@@ -158,8 +159,62 @@ Route::group(['middleware' => 'auth'],function(){
 		return $view->with(compact('ads_status','day_status'));
 	});
 
-	Route::resource('/accounts','UserAccountController');
+//for alert message in horizontal menu	
+	View::composer('layouts.app', function ($view) {
 
+		$user_id = Auth::user()->id;
+		$status = DB::table('user_payments')
+		->join('users','user_payments.user_id','=','users.id')
+		->select('user_payments.account_level as level','users.total_ads as total',
+		'user_payments.updated_at as time','users.first_name','users.last_name')
+		->where('user_payments.user_id',$user_id)
+		->first();
+
+			$level = $status->level;
+			$totalads = $status->total;
+			$time_remain = $status->time;
+
+			$enable = "enabled";
+			$ads_status = false;
+			$day_status = false;
+			
+
+			$days = (new Carbon($time_remain))->diffInDays();
+
+			//ad's remain
+			if($level == 1){
+			$ads_reamin = 2-$totalads;
+			$days_remain = 30 - $days;
+				if($ads_reamin == 0){
+					$ads_status = true;
+				}
+				if($days_remain == 0){
+					$day_status = true;
+					
+				}
+			}else if($level == 2){
+			$ads_reamin = 15-$totalads;
+			$days_remain = 60 - $days;
+				if($ads_reamin == 0){
+					$ads_status = true;
+				}
+				if($days_remain == 0){
+					$day_status = true;
+					
+				}
+			}else if($level == 3){
+			$ads_reamin = 50-$totalads;
+			$days_remain = 120 - $days;
+				if($ads_reamin == 0){
+					$ads_status = true;
+				}
+				if($days_remain == 0){
+					$day_status = true;
+					
+				}
+			}
+		return $view->with(compact('ads_status','day_status'));
+	});
 
 });
 

@@ -35,9 +35,27 @@
                    <form action="/home/{{ $product->id }}" method="POST">
                     {{ csrf_field() }}
                     {{ method_field('PATCH') }}
-                    <input type="hidden" name="main_id" value="{{ $product->main_id }}">
-                    <input type="hidden" name="sub_category_id" value="{{ $product->sub_category_id }}">
+                    {{--  <input type="hidden" name="main_id" value="{{ $product->main_id }}">
+                    <input type="hidden" name="sub_category_id" value="{{ $product->sub_category_id }}">  --}}
+                    <input type="hidden" name="id" value="{{ $product->id }}">
                     <input type="hidden" name="user_id" value="{{ $product->user_id }}">
+
+                    <div class="form-group">
+                        <label for="product_category">Product Category:</label>
+                        <select name="product_category" id="product_category" class="form-control" required="required">
+                          <option>{{$result->main}}</option>
+                          @foreach($category as $categories)
+                          <option value="{{ $categories->id }}">{{ $categories->name }}</option>
+                          @endforeach
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="email">Product Sub Category:</label>
+                        <select name="product_sub_category" id="product_sub_category" class="form-control" required="required">
+                          <option value="">{{$result->category}}</option>
+                        </select>
+                      </div>
+
                     <div class="form-group">
                       <label for="email">Product Tile:</label>
                       <input type="text" class="form-control" id="product_name"  name="product_name"

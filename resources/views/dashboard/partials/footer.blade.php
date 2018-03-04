@@ -77,7 +77,7 @@
                         <li><a href="#">Home</a></li>
                         <li><a href="#">Electronics</a></li>
                         <li><a href="#">Fashion</a></li>
-                        <li><a href="#">Motor's</a></li>
+                        <li><a href="#">Motors</a></li>
                         <li><a href="#">Sports</a></li>
                     </ul>
                 </div>
