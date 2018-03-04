@@ -62,7 +62,7 @@
     <div class="row">
 
       <div class="col-md-8">
-        <img class="img-fluid" src="../img/images/sell.jpg" alt="image not found">
+        <img class="img-responsive" class="img-fluid" src="../img/images/sell.jpg" alt="image not found">
       </div>
 
       <div class="col-md-4">
