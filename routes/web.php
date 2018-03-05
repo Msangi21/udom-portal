@@ -168,7 +168,7 @@ Route::group(['middleware' => 'auth'],function(){
 		->select('user_payments.account_level as level','users.total_ads as total',
 		'user_payments.updated_at as time','users.first_name','users.last_name')
 		->where('user_payments.user_id',$user_id)
-		->get();
+		->first();
 
 			$level = $status->level;
 			$totalads = $status->total;
