@@ -34,12 +34,13 @@
                       <div class="row">
                         <div class="price col-md-6">
                           <h5>
-                            {{ str_limit($item->product_name,25) }}</h5>
-                            <h5 class="" style="color: black;">
-                              <span class="glyphicon glyphicon-map-marker"></span> cive
+                            {{ str_limit($item->product_name,25) }}
+                          </h5>
+                            {{--  <h5 class="" style="color: black;">  --}}
+                              {{--  <span class="glyphicon glyphicon-map-marker"></span> cive
 
                               
-                              </h5>
+                              </h5>  --}}
                             </div>
                             <div class="rating hidden-sm col-md-6">
                               <i class="price-text-color fa fa-star"></i><i class="price-text-color fa fa-star">

@@ -14,12 +14,16 @@
   <link rel="stylesheet" type="text/css" href="../css/menu.css">
   <link rel="stylesheet" type="text/css" href="../css/font.css">
 
+  <script src="../js/jquery-3.1.1.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+
   <link rel="stylesheet" type="text/css" href="../js/jquery-ui/themes/base/theme.css">
   <link rel="stylesheet" type="text/css" href="../js/jquery-ui/themes/base/menu.css">
   <link rel="stylesheet" type="text/css" href="../js/jquery-ui/themes/base/autocomplete.css">
   <link rel="stylesheet" type="text/css" href="../js/jquery-ui/themes/base/core.css">
 
   <link rel="stylesheet" type="text/css" href="../css/index.css">
+
 </head>
 <body>
 
@@ -44,8 +48,8 @@
           Pricing
          </a></li>
 
-         <li><a href="#about" style="color: white">
-          About Us
+         <li><a href="#contacts" style="color: white">
+          Contact
          </a></li>
 
          <li><a href="/login" style="color: white">
@@ -61,19 +65,59 @@
   <div class="container">
     <div class="row">
 
-      <div class="col-md-8">
-        <img class="img-responsive" class="img-fluid" src="../img/images/sell.jpg" alt="image not found">
+      <div class="col-md-8" >
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+          </ol>
+      
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+            <div class="item active">
+              <img src="../img/images/2.jpg" class="img-responsive" alt="my products" style="width:100%;">
+            </div>
+      
+            <div class="item">
+              <img src="../img/images/5.jpg" alt="Smart Phone" style="width:100%;">
+            </div>
+          
+            <div class="item">
+              <img src="../img/images/8.jpg" alt="New york" style="width:100%;">
+            </div>
+          </div>
+      
+          <!-- Left and right controls -->
+          <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
       </div>
 
-      <div class="col-md-4">
-        <h3>UDOM PORTAL</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.</p>
-        <h3 class="my-3">Project Details</h3>
-        <ul>
-          <li>Lorem Ipsum</li>
-          <li>Dolor Sit Amet</li>
-          <li>Consectetur</li>
-          <li>Adipiscing Elit</li>
+      <div class="col-md-4 text-justify">
+        <h3><u>UDOM PORTAL</u></h3>
+        <p style="font-size:17px">UDOM PORTAL - Is a web application which allow its users to advertise
+          their products within the University of Dodoma (UDOM), It simplifies the products
+          advertisement by reducing effort used by user to announse his/her products in many groups
+          of <b>Social network</b> where some people will not see the notification.
+        </p>
+        <p style="font-size:17px">
+          Using this portal it make easier for user to advertise the products and bussines
+          and it will be visible to all people who visits the Portal.
+        </p>
+        <h3 class="my-3"><u>Advantages  of UDOM PORTAL</u></h3>
+        <ul style="font-size:17px">
+          <li>It save time</li>
+          <li>Visited By many people</li>
+          <li>Not Expensive for announse your Ads</li>
+          <li>Free Consulitation</li>
         </ul>
       </div>
 
@@ -202,8 +246,50 @@
 
 </section>
 
-<section class="price" id="about" style="background-color:#3d3d3d">
-  <center><h1 style="padding:20px;color:white"><b>About Us</b></h1></center>
+<section class="price" id="contacts" style="background-color:#3d3d3d">
+  <center><h1 style="padding:20px; padding-top:20px; color:white"><b>Our Contact</b></h1></center>
+  <br><br>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+          <div class="panel panel-default">
+              <div class="panel-body" style="font-size:19px">
+                <p><b>Address:</b> P.O. BOX 1196</p>
+                <p><b>Contact 1:</b> +255766242951</p>
+                <p><b>Contact 2:</b> +255786447520</p>
+                <p><b>Email:</b> info@natmatech.co.tz</p>
+                <p><b>Street:</b> PLOT No. 73 BLOCK F Kisasa B Center.</p>
+                <p><b>Region:</b> Dodoma</p>
+                <h4><u>More</u></h4>
+                
+                <p>Dar es Salaam road near Martin Luther School or Nesuda Dispensary opposite Maria Dematias</p>
+              </div>
+              
+            </div>
+      </div>
+
+      <div class="col-sm-6">
+          <div class="panel panel-default">
+              <div class="panel-body">
+                <h3><u>FeedBack</u></h3>
+                <form >
+                  <div class="form-group">
+                    <label for="email">Email address:</label>
+                    <input type="email" class="form-control input-lg"  id="email" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="comment">Comment:</label>
+                    <textarea class="form-control" rows="4" id="comment" required></textarea>
+                  </div>
+                  
+                  <button type="submit" class="btn btn-default ">Submit</button>
+                </form>
+                </div>
+            </div>
+      </div>
+      
+    </div><br><br><br><br>
+  </div>
 </section>
 @include('dashboard.partials.footer')
 </body>

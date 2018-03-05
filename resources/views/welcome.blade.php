@@ -185,7 +185,7 @@
           </ul>
         </li>
         <li>
-          <a href="#">About us</a>
+          <a href="/seller">About us</a>
         </li>
       </ul>
     </nav>

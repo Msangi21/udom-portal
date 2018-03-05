@@ -67,23 +67,26 @@
         <div class="row">
         	<div class="col-md-3 footer-brand animated fadeInLeft">
             	<h3 style="color: #ffbf00">UDOM PORTAL</h3>
-                <p>Suspendisse hendrerit tellus laoreet luctus pharetra. Aliquam porttitor vitae orci nec ultricies. Curabitur vehicula, libero eget faucibus faucibus, purus erat eleifend enim, porta pellentesque ex mi ut sem.</p>
-                <p>© 2014 BS3 UI Kit, All rights reserved</p>
+                <p>Is a web application which allow its users to advertise
+                    their products within the University of Dodoma (UDOM), It simplifies the products
+                    advertisement by reducing effort used by user to announse his/her products in many groups
+                    of <b>Social network</b> where some people will not see the notification.</p>
+                <p>© {{date('Y')}} NATMATECH, All rights reserved</p>
             </div>
         	<div class="col-md-4 footer-nav animated fadeInUp">
             	<h4>Menu —</h4>
             	<div class="col-md-6">
                     <ul class="pages">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Electronics</a></li>
-                        <li><a href="#">Fashion</a></li>
-                        <li><a href="#">Motors</a></li>
-                        <li><a href="#">Sports</a></li>
+                        <li><a href="/homestools/4">Home</a></li>
+                        <li><a href="/electrical/1">Electronics</a></li>
+                        <li><a href="/fashion/2">Fashion</a></li>
+                        <li><a href="/motors/3">Motors</a></li>
+                        <li><a href="/sports/5">Sports</a></li>
                     </ul>
                 </div>
             	<div class="col-md-6">
                     <ul class="list">
-                        <li><a href="#">About Us</a></li>
+                        <li><a href="#about">About Us</a></li>
                         <li><a href="#">Contacts</a></li>
                         <li><a href="#">Terms & Condition</a></li>
                         <li><a href="#">Privacy Policy</a></li>
@@ -96,15 +99,15 @@
                 	<li><a href="#">Facebook</a></li>
                 	<li><a href="#">Twitter</a></li>
                 	<li><a href="#">Instagram</a></li>
-                	<li><a href="#">RSS</a></li>
+                	
                 </ul>
             </div>
         	<div class="col-md-3 footer-ns animated fadeInRight">
             	<h4>Newsletter</h4>
-                <p>A rover wearing a fuzzy suit doesn’t alarm the real penguins</p>
+                <p>For purpose of get our update information please send to us your email</p>
                 <p>
                     <div class="input-group">
-                      <input type="text" class="form-control" placeholder="Search for...">
+                      <input type="email" class="form-control" placeholder="Enter email...">
                       <span class="input-group-btn">
                         <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-envelope"></span></button>
                       </span>
