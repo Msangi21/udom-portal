@@ -165,12 +165,12 @@ Route::group(['middleware' => 'auth'],function(){
 		$user_id = Auth::user()->id;
 		$status = DB::table('user_payments')
 		->join('users','user_payments.user_id','=','users.id')
-		->select('user_payments.account_level as level','users.total_ads as total',
+		->select('user_payments.account_level ','users.total_ads as total',
 		'user_payments.updated_at as time','users.first_name','users.last_name')
 		->where('user_payments.user_id',$user_id)
 		->first();
 
-			$level = $status->level;
+			$level = $status->account_level;
 			$totalads = $status->total;
 			$time_remain = $status->time;
 
