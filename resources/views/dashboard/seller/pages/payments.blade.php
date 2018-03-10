@@ -59,7 +59,7 @@
                                 <div>
                                     <h4><u>Get Your Account</u></h4>
                                     <p>
-                                        Baada ya kulipa subiri <b>masaa 3</b>. Yakiisha ingiza kumbukumbu namba yako hapo
+                                        Baada ya kulipa subiri <b>dakika 15</b>. Baada ya hapo ingiza kumbukumbu namba yako hapo
                                         chini kupata akaunti yako
                                     </p>
                                     <div class="col-sm-offset-2 ">

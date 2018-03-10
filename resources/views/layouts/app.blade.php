@@ -164,7 +164,10 @@
         </div>
     </div>
 </div>
+
 @include('dashboard.partials.footer')
+
+
 
 
 <!-- Scripts -->

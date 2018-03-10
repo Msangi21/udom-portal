@@ -45,6 +45,11 @@ Route::get('seller',function(){
 
 Auth::routes();
 
+Route::group(['midleware' => 'admin'], function(){
+	Route::get('/add-token','AdminController@index');
+	Route::post('/send-token','AdminController@addToken');
+});
+
 Route::group(['middleware' => 'auth'],function(){
 
 	Route::get('/post', function () {

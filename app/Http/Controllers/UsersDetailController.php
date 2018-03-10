@@ -95,6 +95,7 @@ class UsersDetailController extends Controller
         $check_reg = "select * from user_details where reg = '$reg'";
         $countRow = DB::select($select);
         $count_reg = count(DB::select($check_reg));
+        
         if(count($countRow) > 0){
             $result = DB::update($sql);
             if($result){

@@ -124,10 +124,53 @@ class UserAccountController extends Controller
         $token = $request->token_no;
 
         $check_token = "select * from payments_token where token = '$token'";
-        $check_expire = "select status from payments_toke where token = '$token'";
-        $check_amount = "select amount from payments_token where token = '$token'";
-
         
+
+        $token_result = DB::select($check_token);
+        $expire_result = DB::table('payments_token')
+                            ->where('token','=',$token)
+                            ->select('status')->first();
+        $amount_result = DB::table('payments_token')
+                            ->where('token','=',$token)
+                            ->select('amount')->first();
+
+        if(count($token_result) > 0){
+            if($expire_result->status == 1){
+                return redirect()->back()->with("error","Kumbukumbu namba ulioweka imeshatumika Imeshatumika");
+            }else{
+                if($amount_result->amount == 1000){
+                    DB::table('user_payments')
+                        ->where('user_id',$user_id)
+                        ->update(['account_level'=>2]);
+                    DB::table('users')
+                        ->where('id',$user_id)
+                        ->update(['total_ads'=>0]);
+                    DB::table('payments_token')
+                        ->where('token',$token)
+                        ->update(['status'=>1]);
+                    return redirect()->back()->with("message","Umefanikiwa Kununua Akaunti mpya");
+                }else if($amount_result->amount == 2000){
+                    DB::table('user_payments')
+                        ->where('user_id',$user_id)
+                        ->update(['account_level'=>3]);
+                    DB::table('users')
+                        ->where('id',$user_id)
+                        ->update(['total_ads'=>0]);
+                    DB::table('payments_token')
+                        ->where('token',$token)
+                        ->update(['status'=>1]);
+                    return redirect()->back()->with("message","Umefanikiwa Kununua Akaunti mpya");
+                        
+                }else{
+                    return redirect()->back()->with("error","Kunatatizo la mtandao jarabu tena");
+                }
+            }
+        }else{ 
+            return redirect()->back()->with("error","Namba ya kumbukumbu haipo
+            , Kama umelipa subiri kwa dakika 3 na ujaribu tena kuingiza kumbukumbu 
+            namba yako");
+        }
+
         
         return view('dashboard.seller.pages.payments');
     }
