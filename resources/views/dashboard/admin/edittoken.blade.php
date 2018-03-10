@@ -13,18 +13,19 @@
                     </h3>
                     <hr>
                     <div class="panel-body">
-                        <form action="/send-token" method="POST">
+                        <form action="/update-token/{{$token->id}}" method="POST">
                             {{csrf_field()}}
+                           
                         <div class="form-group col-sm-5">
                             <label for="token_no">Token:</label>
-                            <input type="text" name="token_no" class="form-control" id="token_no" required>
+                            <input type="text" value="{{ isset($token->token) ? $token->token : old('name') }}" name="token" class="form-control" id="token_no" required>
                         </div>
                         <div class="form-group col-sm-5">
                         <label for="level">Select list:</label>
                         <select class="form-control" name="level" id="level" required>
                             <option value="">--Select level--</option>
-                            <option value="{{1000}}">Standad</option>
-                            <option value="{{2000}}">Primer</option>
+                            <option value="{{1000}}">Standard</option>
+                            <option value="{{2000}}">Premium</option>
                         </select>
                         </div>
                         <div class="form-group"> 

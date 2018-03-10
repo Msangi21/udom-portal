@@ -40,4 +40,46 @@ class AdminController extends Controller
     }
 
     }
+
+    public function allToken(){
+        $select = DB::table('payments_token')
+                ->select('id','token','amount','status')
+                ->latest('id')
+                ->get();
+        return view('dashboard.admin.alltoken',compact('select'));
+    }
+
+    public function edit($id){
+        $token = DB::table('payments_token')
+                ->select('id','token','amount','status')
+                ->where('id','=',$id)
+                ->first();
+        return view('dashboard.admin.edittoken',compact('token'));
+    }
+
+    public function update(Request $request, $id){
+        $token = $request->token;
+        $amount = $request->level;
+
+        $update = DB::table('payments_token')
+                    ->where('id','=',$id)
+                    ->update([
+                        'token'=>$token,
+                        'amount'=>$amount
+                    ]);
+
+        if($update){
+            return redirect('/all-token');
+        }
+    }
+
+    public function allUsers(){
+        $users = DB::table('users')
+                ->join('user_payments','users.id','=','user_payments.user_id')
+                ->select('users.first_name','users.last_name','users.email'
+                ,'users.status','user_payments.account_level as level')
+                ->get();
+
+        return view('dashboard.admin.allusers',compact('users'));
+    }
 }

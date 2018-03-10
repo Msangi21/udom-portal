@@ -199,10 +199,10 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <a href="#">Notifications</a> <span class="label label-info">5</span>
+                                        <a href="/all-users">All Users</a>
                                     </td>
                                 </tr>
-                                <tr>
+                                {{--  <tr>
                                     <td>
                                         <a href="#">Import/Export</a>
                                     </td>
@@ -211,7 +211,7 @@
                                     <td>
                                         <span class="glyphicon glyphicon-trash text-danger"></span><a href="#" class="text-danger">
                                             Delete Account</a>
-                                    </td>
+                                    </td>  --}}
                                 </tr>
                             </table>
                         </div>
