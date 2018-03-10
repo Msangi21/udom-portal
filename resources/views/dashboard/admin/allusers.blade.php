@@ -20,7 +20,7 @@
                                         <th>Last Name</th>
                                         <th>Email</th>
                                         <th>Status</th>
-                                        <th>Level</th>
+                                        <th>Level</th> 
                                       </tr>
                                     </thead>
                                     <tbody>

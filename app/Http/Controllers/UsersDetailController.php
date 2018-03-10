@@ -92,7 +92,8 @@ class UsersDetailController extends Controller
         $insert = "insert into user_details (user_id,college_id,reg,mobile1,mobile2,block_no,room) values ('$user_id','$collage_id','$reg','$mobile1','$mobile2','$block_no','$room')";
 
         $select = "select * From user_details where user_id = '$user_id'";
-        $check_reg = "select * from user_details where reg = '$reg'";
+        $check_reg = "select * from user_details where reg = '$reg' or mobile1 = '$mobile1'
+        or mobile2 = '$mobile2' or mobile1 = '$mobile2' or mobile2 = '$mobile1'";
         $countRow = DB::select($select);
         $count_reg = count(DB::select($check_reg));
         
