@@ -17,6 +17,7 @@ class CreateUserDetailsTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->integer('college_id')->unsigned();
+            $table->string('reg',17);
             $table->string('mobile1',10);
             $table->string('mobile2',10);
             $table->string('block_no',100);

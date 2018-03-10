@@ -64,6 +64,8 @@ Route::group(['middleware' => 'auth'],function(){
 	Route::resource('/profile', 'UsersProfileController');
 	Route::resource('/address','UsersDetailController');
 	Route::resource('/accounts','UserAccountController');
+	Route::get('/payments','UserAccountController@payments');
+	Route::post('/pay','UserAccountController@pay');
 
 	Route::get('login-register',function(){
 		return view('dashboard.seller.login-register');
@@ -163,12 +165,31 @@ Route::group(['middleware' => 'auth'],function(){
 	View::composer('layouts.app', function ($view) {
 
 		$user_id = Auth::user()->id;
+		//register user to free account
+		$result1 = DB::table('user_payments')
+							->select('account_level')
+							->where('user_id','=',$user_id)
+							->get();
+		$num1 = Count($result1);
+
+		if($num1 == 0){
+			DB::table('user_payments')
+					->insert(
+						[
+							'user_id'=>$user_id,'account_level'=>1,'created_at'=>Carbon::now(),'updated_at'=>Carbon::now()
+						]
+					);
+		}
+
+		
 		$status = DB::table('user_payments')
 		->join('users','user_payments.user_id','=','users.id')
 		->select('user_payments.account_level as level','users.total_ads as total',
 		'user_payments.updated_at as time','users.first_name','users.last_name')
 		->where('user_payments.user_id',$user_id)
 		->first();
+
+		
 
 			$level = $status->level;
 			$totalads = $status->total;

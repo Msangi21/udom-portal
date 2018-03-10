@@ -126,7 +126,7 @@
                                                             <div class="panel panel-warning">
                                                             <div class="panel-heading text-center" style="padding:28px;">
                                                                 <h3>Standard Account</h3>
-                                                                <p style="color:black"><b>Tsh 4,000/= For 2 Month</b></p>
+                                                                <p style="color:black"><b>Tsh 2,000/= For 2 Month</b></p>
                                                             </div>
                                                             <div class="panel-body text-center">
                                                                     <ul class="list-group list-group-flush">
@@ -137,7 +137,7 @@
                                                                     <li class="list-group-item">consultation <span style="color:green; margin-left:13px" class="glyphicon glyphicon-ok"></li>
                                                                     </ul>
                             
-                                                                   <a href="/standard"> <button type="button" class="btn btn-warning">Buy it Now</button></a>
+                                                                   <a href="/payments"> <button type="button" class="btn btn-warning">Buy it Now</button></a>
                                                             </div>
                                                             </div>
                             
@@ -146,7 +146,7 @@
                                                             <div class="panel panel-danger text-center">
                                                             <div class="panel-heading text-center" style="padding:28px;">
                                                                 <h3>Premium Account</h3>
-                                                                <p style="color:black"><b>Tsh 8,500/= For 4 Month</b></p>
+                                                                <p style="color:black"><b>Tsh 2,000/= For 4 Month</b></p>
                                                             </div>
                                                             <div class="panel-body">
                                                                     <ul class="list-group list-group-flush">
@@ -157,7 +157,7 @@
                                                                     <li class="list-group-item">consultation <span style="color:green; margin-left:13px" class="glyphicon glyphicon-ok"></li>
                                                                     </ul>
                             
-                                                           <a href="/premium"> <button type="button" class="btn btn-danger">Buy it Now</button></a>
+                                                           <a href="/payments"> <button type="button" class="btn btn-danger">Buy it Now</button></a>
                                                             </div>
                             
                                                     </div>

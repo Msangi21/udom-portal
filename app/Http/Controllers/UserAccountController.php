@@ -114,4 +114,21 @@ class UserAccountController extends Controller
     {
         //
     }
+
+    public function payments(){
+        return view('dashboard.seller.pages.payments');
+    }
+
+    public function pay(Request $request){
+        $user_id = Auth::User()->id;
+        $token = $request->token_no;
+
+        $check_token = "select * from payments_token where token = '$token'";
+        $check_expire = "select status from payments_toke where token = '$token'";
+        $check_amount = "select amount from payments_token where token = '$token'";
+
+        
+        
+        return view('dashboard.seller.pages.payments');
+    }
 }

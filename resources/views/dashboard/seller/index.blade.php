@@ -173,7 +173,7 @@
         <h3>Standard Account<span>
         Officia For  </span>
         </h3>
-        <h4><i>ths</i>4,000<i>.00</i>
+        <h4><i>ths</i>2,000<i>.00</i>
         <span>
         Per 2 Month </span>
         </h4>
@@ -211,7 +211,7 @@
         <h3>Premium Account<span>
         Official For Business </span>
         </h3>
-        <h4><i>ths</i>8500<i>.00</i>
+        <h4><i>ths</i>4,000<i>.00</i>
         <span>
         Per 4 Month </span>
         </h4>

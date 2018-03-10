@@ -164,7 +164,7 @@ class SummaryController extends Controller
     {
         
         $products = Products::findOrFail($id);
-        $main_image = $image_path;
+        $main_image = $products->image_path;
         Storage::disk('public')->delete($main_image);
 
         $sql = DB::select('select * from images where products_id = ?', [$id]);
@@ -175,7 +175,7 @@ class SummaryController extends Controller
         }
 
         
-        $delete();
+        $products->delete();
 
 
         

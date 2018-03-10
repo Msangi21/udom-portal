@@ -77,7 +77,7 @@ class UsersDetailController extends Controller
     public function update(Request $request, User_detail $user_detail,$id)
     {
        // $user_detail = User_detail::findOrFail($id);
-
+        $reg = $request->reg;
         $mobile1 = $request->mobile1;
         $mobile2 = $request->mobile2;
         $collage_id= $request->collage;
@@ -86,13 +86,15 @@ class UsersDetailController extends Controller
         $user_id = $id;
         $status = true;
 
-        $sql = "update user_details set user_id = '$user_id',college_id='$collage_id',mobile1='$mobile1',mobile2='$mobile2',block_no='$block_no',room='$room' where user_id = $user_id";
+        $sql = "update user_details set user_id = '$user_id',college_id='$collage_id',reg='$reg',mobile1='$mobile1',mobile2='$mobile2',block_no='$block_no',room='$room' where user_id = $user_id";
 
         $status = "update users set status ='$status' where id='$user_id'";
-        $insert = "insert into user_details (user_id,college_id,mobile1,mobile2,block_no,room) values ('$user_id','$collage_id','$mobile1','$mobile2','$block_no','$room')";
+        $insert = "insert into user_details (user_id,college_id,reg,mobile1,mobile2,block_no,room) values ('$user_id','$collage_id','$reg','$mobile1','$mobile2','$block_no','$room')";
 
         $select = "select * From user_details where user_id = '$user_id'";
+        $check_reg = "select * from user_details where reg = '$reg'";
         $countRow = DB::select($select);
+        $count_reg = count(DB::select($check_reg));
         if(count($countRow) > 0){
             $result = DB::update($sql);
             if($result){
@@ -102,11 +104,11 @@ class UsersDetailController extends Controller
                 return redirect()->back()->with('error','Edit Fail');
             }
         }else{
-            if(DB::insert($insert) ){
+            if(DB::insert($insert) && $count_reg < 1){
                 DB::update($status);
                 return redirect()->back()->with('message','Status Complete');
             }else{
-                return redirect()->back()->with('error','Something Wrong');
+                return redirect()->back()->with('error','Something Wrong or User already Exist');
             }
         }
 

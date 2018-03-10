@@ -22,9 +22,22 @@
          </span>
      </h3>
      <hr>
+     <div class="panel panel-default">
+       <div class="panel-body">
+      <span style="color:red"> Notes:</span>
+       The information which you provide here will be used by a customer to find you
+       , So make sure is correct information
+       </div>
+     </div>
            <form class="form-horizontal" role="form" method="POST" action="/address/{{ Auth::User()->id }}">
            	{{ csrf_field() }}
-           	{{ method_field('PATCH') }}
+             {{ method_field('PATCH') }}
+             <div class="form-group">
+              <label class="col-lg-3 control-label">Reg Number</label>
+              <div class="col-lg-8">
+                <input class="form-control" name="reg" type="text" value="{{ isset($userDetail->reg) ? $userDetail->reg : old('name') }}" placeholder="T/UDOM/2016/07076" required>
+              </div>
+            </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">Mobile 1:</label>
             <div class="col-lg-8">
