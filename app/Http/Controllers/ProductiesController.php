@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 use Storage;
 use Auth;
 use DB;
-use Illuminate\Support\Carbon;
+use Carbon\carbon;
+//use Illuminate\Support\Carbon;
 use App\Jobs\ImagesUpload;
 use App\Products;
 use Illuminate\Http\Request;
@@ -41,7 +42,7 @@ class ProductiesController extends Controller
     {
         $product = new Products;
         $id = Auth::User()->id;
-        $now = now();
+        $now = Carbon::now();
 
         //return $prod_id;
 
