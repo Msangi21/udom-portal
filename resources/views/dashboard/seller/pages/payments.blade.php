@@ -40,7 +40,7 @@
                                        <div class="panel panel-danger" >
                                             <div class="panel-heading" style="background-color:red; color:white">M Pesa</div>
                                             <div class="panel-body">
-                                                Panel Content
+                                              Mfumo wa M-pesa Bado Haujawa Tayari
                                             </div>
                                         </div> 
                                     </div>
@@ -49,7 +49,7 @@
                                     <div class="panel panel-danger">
                                         <div class="panel-heading">Airtel Money</div>
                                         <div class="panel-body">
-                                            Panel Content
+                                            Mfumo wa Airtel Money Bado Haujawa Tayari
                                         </div>
                                     </div> 
                                     </div>

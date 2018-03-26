@@ -118,31 +118,22 @@ class SummaryController extends Controller
         $stmt = DB::table('products')
                 ->where([
                     [
-                        'id','=',$id
+                        'id',$id
                     ],
                     [
-                        'user_id','=',$user_id
+                        'user_id',$user_id
                     ]
                     
                 ])
                 ->update(
                     [
-                        'main_id','=',$main_id
-                    ],
-                    [
-                        'sub_category_id','=',$sub_category_id
-                    ],
-                    [
-                        'product_name'=>$product_name
-                    ],
-                    [
-                        'price'=>$price
-                    ],
-                    [
+                        'main_id'=>$main_id,
+                        'sub_category_id'=>$sub_category_id,
+                        'product_name'=>$product_name,
+                        'price'=>$price,
                         'description'=>$description
                     ]
-                   
-               );
+                );
 
         if($stmt){
             return redirect()->back()->with('message','Edit Successful');

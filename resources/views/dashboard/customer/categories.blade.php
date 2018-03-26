@@ -239,7 +239,7 @@
 
                   <img src="{{ Request::getSchemeAndHttpHost() }}/storage/{{ $item_for_phone->image_path }}" alt="" style="width:100%; height: 90px;">
                   <div class="caption">
-                    <p>{{ str_limit($item_for_phone->product_name,25) }}</p>
+                    <p>{{ str_limit($item_for_phone->product_name,10) }}</p>
                   </div>
 
                 </div></a>
