@@ -95,7 +95,7 @@
                         @if(count($fashion) > 0)
                         @foreach($fashion as $item)
 
-                        <div class="col-sm-3"><a href="/{$item->id}">
+                        <div class="col-sm-3"><a href="/item/{{$item->id}}">
                           <div class="col-item">
                             <div class="photo">
                               <img src="{{ Request::getSchemeAndHttpHost() }}/storage/{{ $item->image_path }}" class="img-responsive"  alt="a" />
@@ -117,7 +117,7 @@
                                   <div class="separator clear-left">
                                     <p class="btn-add">
                                       <p class="btn-add">
-                              <a href="/item/{{ $item->id }}" class="hidden-sm">{{ number_format($item->price) }} TSH</a></p>
+                                   <a href="/item/{{ $item->id }}" class="hidden-sm">{{ number_format($item->price) }} TSH</a></p>
                                       <p class="btn-details">
                                         <i class="fa fa-list"></i><a href="/item/{{ $item->id }}" class="hidden-sm">More details</a></p>
                                       </div>

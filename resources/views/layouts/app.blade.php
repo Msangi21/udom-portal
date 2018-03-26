@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+    <link href="../css/members.css" type="text/css" rel="stylesheet" />
 
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
     <!-- bxSlider CSS file -->
     <link href="../css/jquery.bxslider.css" type="text/css" rel="stylesheet" />
+    
 
     <!-- Javascript file -->
 
