@@ -129,10 +129,10 @@
 <section class="price" id="price" style="background-color:#edeff2">
 <center><h1 style="padding:20px"><b>Our Pricing</b></h1></center>
 
-<div class="row col-md-offset-2">
+<div class="row col-md-offset-2 col-xs-offset-0">
   <!-- Pricing -->
-  <div class="col-sm-3">
-    <div class="pricing hover-effect">
+  <div class="col-md-3 col-xs-4">
+    <a href="/accounts" style="text-decoration:none;"><div class="pricing hover-effect">
       <div class="pricing-head">
         <h3>Free Account<span>
           Official For New Customer </span>
@@ -161,17 +161,17 @@
       </ul>
       <div class="pricing-footer">
         
-        <a href="/home" class="btn yellow-crusta">
+        <a href="/accounts" class="btn yellow-crusta">
         Get it Now
         </a>
       </div>
-    </div>
+    </div></a>
   </div>
-  <div class="col-sm-3">
-    <div class="pricing hover-effect">
+  <div class="col-md-3 col-xs-4">
+    <a href="/accounts" style="text-decoration:none;"><div class="pricing hover-effect">
       <div class="pricing-head">
         <h3>Standard Account<span>
-        Officia For  </span>
+        Officia For   </span>
         </h3>
         <h4><i>ths</i>2,000<i>.00</i>
         <span>
@@ -199,14 +199,14 @@
      
       <div class="pricing-footer">
        
-        <a href="javascript:;" class="btn yellow-crusta">
+        <a href="/accounts" class="btn yellow-crusta">
         Buy It Now
         </a>
       </div>
-    </div>
+    </div></a>
   </div>
-  <div class="col-sm-3">
-    <div class="pricing pricing-active hover-effect">
+  <div class="col-sm-3 col-xs-4">
+    <a href="/accounts" style="text-decoration:none;"><div class="pricing pricing-active hover-effect">
       <div class="pricing-head pricing-head-active">
         <h3>Premium Account<span>
         Official For Business </span>
@@ -235,11 +235,11 @@
       </ul>
       <div class="pricing-footer">
         
-        <a href="javascript:;" class="btn yellow-crusta">
+        <a href="/accounts" class="btn yellow-crusta">
         Buy It Now
         </a>
       </div>
-    </div>
+    </div></a>
   </div>
 
 </div>

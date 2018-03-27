@@ -54,7 +54,7 @@ img{
 
 						</h5>
 						<span style="font-size: 12px;">Get it from us</span>
-						<p><span class="glyphicon glyphicon-map-marker"></span> Map-marker icon:</p> 
+						<p><span class="glyphicon glyphicon-map-marker"></span>UDOM</p> 
 						
 					</div>
 					</div></a>

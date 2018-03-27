@@ -13,7 +13,7 @@
                     </h3>
                     <hr>
                     <div class="panel-body">
-                            <table class="table table-bordered">
+                            <table class="table table-bordered table-responsive">
                                     <thead>
                                       <tr>
                                         <th>First Nme</th>

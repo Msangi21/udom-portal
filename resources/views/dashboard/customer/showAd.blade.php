@@ -229,7 +229,7 @@
       <!--Images with bxslide -->
       <div class="row">
         <div class="col-xs-12" >
-          <ul class="bxslider" >
+          <ul class="bxslider">
             <li class="img-responsive">
               <img src="{{ Request::getSchemeAndHttpHost() }}/storage/{{ $products->image_path }}" >
             </li>
