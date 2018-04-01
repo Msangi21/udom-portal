@@ -24,11 +24,12 @@
                     @if(count($details)>0)
                     @foreach($details as $detail)
                     <div class="row">
-                        <div class="col-md-4">
-                            <div class="thumbnail">
+                        <div class="col-md-4 item1">
+                            <div class="item2">
+                                <div >
                               <a href="storage/{{ $detail->image_path }}">
                                 <img src="storage/{{ $detail->image_path }}" alt="{{ $detail->product_name }}" class="img-rounde" style="width:100%">
-                                
+                            </div>
                             </a>
                         </div>
                     </div>

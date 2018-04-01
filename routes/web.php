@@ -85,6 +85,7 @@ Route::group(['middleware' => 'auth'],function(){
 
 	//Route::get('/home','UserAccountController');
 	View::composer('dashboard.seller.partials.side_bar', function ($view) {
+		if(Auth::check()){
 		$user_id = Auth::user()->id;
 
 //register user to free account
@@ -110,12 +111,13 @@ Route::group(['middleware' => 'auth'],function(){
 		$num = Count($result);
 		
 		return $view->with(compact('result','num'));
+	}
 	});
 
 	//control expired account to upload ad's
 
 	View::composer('dashboard.seller.pages.post', function ($view) {
-
+		if(Auth::check()){
 		$user_id = Auth::user()->id;
 		$status = DB::table('user_payments')
 		->join('users','user_payments.user_id','=','users.id')
@@ -168,11 +170,12 @@ Route::group(['middleware' => 'auth'],function(){
 				}
 			}
 		return $view->with(compact('ads_status','day_status'));
+		}
 	});
 
 //for alert message in horizontal menu	
 	View::composer('layouts.app', function ($view) {
-
+	 if(Auth::check()){
 		$user_id = Auth::user()->id;
 		//register user to free account
 		$result1 = DB::table('user_payments')
@@ -244,8 +247,9 @@ Route::group(['middleware' => 'auth'],function(){
 				}
 			}
 		return $view->with(compact('ads_status','day_status'));
+	 }
 	});
-
+	
 });
 
 

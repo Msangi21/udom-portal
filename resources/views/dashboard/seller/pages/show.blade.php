@@ -36,16 +36,18 @@
                                         <div class="carousel slide" id="myCarousel">
                                             <!-- Carousel items -->
                                             <div class="carousel-inner">
-                                                <div class="active item" data-slide-number="0">
+                                                <div class="active item item1" data-slide-number="0">
+                                                    <div>
                                                     <img src="{{ Request::getSchemeAndHttpHost() }}/storage/{{ $products->image_path }}"></div>
-
+                                                </div>
                                                     @if(count($images) > 0)
 
                                                     @foreach($images as $key=>$image)
 
-                                                    <div class="item" data-slide-number="{{ $key }}">
+                                                    <div class="item item1" data-slide-number="{{ $key }}">
+                                                        <div>
                                                         <img src="{{ Request::getSchemeAndHttpHost() }}/storage/{{ $image->image_path }}"></div>
-
+                                                         </div>
                                                         @endforeach
 
                                                         @endif

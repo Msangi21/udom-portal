@@ -38,6 +38,33 @@
         margin-left: -40px;
         margin-top:20px;
     }
+    .item1 {
+    
+        max-width: 530px; 
+        max-height: 490px;
+        
+      
+      }
+      .item1 img{
+        height: auto; 
+        width: auto; 
+        max-width: 530px; 
+        max-height: 490px;
+        margin: 0;
+        margin-left: auto;
+          margin-right: auto;
+          display: block;
+      }
+      .item2 img{
+        height: auto; 
+        width: auto; 
+        max-width: 230px; 
+        max-height: 195px;
+        margin: 0;
+        margin-left: auto;
+          margin-right: auto;
+          display: block;
+      }
 
     .thumbnail {
         padding: 0;
@@ -113,7 +140,7 @@
                                     {{ csrf_field() }}
                                 </form>
                             </li>
-                            <li><a href="password/reset ">Change password</a></li>
+                            <li><a href="/password/reset ">Change password</a></li>
                         </ul>
                     </li>
                     @if($day_status == true)

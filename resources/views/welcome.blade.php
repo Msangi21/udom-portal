@@ -51,6 +51,34 @@
   .SearchBar{
 
   }
+  .item1 {
+    
+      max-width: 530px; 
+      max-height: 490px;
+      
+    
+    }
+    .item1 img{
+      height: auto; 
+      width: auto; 
+      max-width: 530px; 
+      max-height: 490px;
+      margin: 0;
+      margin-left: auto;
+	    margin-right: auto;
+	    display: block;
+    }
+
+    .item2 img{
+      height: auto; 
+      width: auto; 
+      max-width: 230px; 
+      max-height: 195px;
+      margin: 0;
+      margin-left: auto;
+	    margin-right: auto;
+	    display: block;
+    }
   .center {
     display: block;
     margin-left: auto;

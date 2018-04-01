@@ -6,13 +6,9 @@
 	margin-right: 10px;
 }
 
-img{
-	width: 25%;
-	height: 120%;
-
-}
 .span4 .img-left {
 	float: left;
+	width: 160px;	
 }
 .span4 .img-right {
 	float: right;
@@ -43,8 +39,10 @@ img{
 				<div class="row">
 
 					<div class="col-sm-12" style="padding-left: 12px;"><a href="/item/{{ $item->id }}">
-						<div class="span4">
+						<div class="span4 item2">
+							<div>
 						<img class="img-left" src="{{ URL::to('/') }}/storage/{{ $item->image_path }}" />
+					</div>
 						<div class="content-heading">
 							<h4 ><a href="/item/{{ $item->id }}">{{ $item->product_name }} &nbsp </a></h4>
 							<h5><p class="pull-right text-primary"><span class="glyphicon glyphicon-time"></span> {{ $item->created_at->diffForHumans() }}</p><h5>
@@ -68,7 +66,7 @@ img{
 				<h4></h4>
 				<div class="alert alert-info">
 					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-					<strong>No Ad's added</strong> 
+					<strong>No Ads added</strong> 
 				</div>
 					<hr>
 				@endif

@@ -141,7 +141,7 @@ body
             <hr>
 
             <div class="form-group">
-              <label for="name">More Product Images (Atleast 1):</label>
+              <label for="name">More Product Images of That Main Image  (Atleast 1):</label>
 
               <input type="file" class="form-control" id="images" name="images[]" onchange="preview_images();" required  multiple >
 
@@ -151,7 +151,7 @@ body
 
 
             <div class="form-group">
-              <label for="product_name">Product Tile:</label>
+              <label for="product_name">Product Title:</label>
               <input type="text" name="product_name" class="form-control" id="product_name" maxlength="50" placeholder="Eg. Nauza Computer Aina Ya Hp" required>
             </div>
 

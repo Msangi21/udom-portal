@@ -16,7 +16,7 @@
 
 
 
-
+@if(Auth::check())
 <div class="container">
     <div class="row " >
         <div class="col-sm-3">
@@ -202,16 +202,7 @@
                                         <a href="/all-users">All Users</a>
                                     </td>
                                 </tr>
-                                {{--  <tr>
-                                    <td>
-                                        <a href="#">Import/Export</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="glyphicon glyphicon-trash text-danger"></span><a href="#" class="text-danger">
-                                            Delete Account</a>
-                                    </td>  --}}
+                               
                                 </tr>
                             </table>
                         </div>
@@ -227,3 +218,4 @@
     {{-- For smartphone --}}
 
 </div>
+@endif
