@@ -60,6 +60,8 @@ Route::group(['middleware' => 'auth'],function(){
 		$category = App\Main_product::all();
 		return view('dashboard.seller.pages.post',compact('category'));
 	});
+	Route::get('/changePassword','HomeController@showChangePasswordForm');
+	Route::post('/changePassword','HomeController@changePassword')->name('changePassword');
 	
 	Route::resource('/product','ProductiesController');
 

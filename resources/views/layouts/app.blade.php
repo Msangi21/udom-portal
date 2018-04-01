@@ -140,7 +140,7 @@
                                     {{ csrf_field() }}
                                 </form>
                             </li>
-                            <li><a href="/password/reset ">Change password</a></li>
+                            <li><a href="/changePassword ">Change password</a></li>
                         </ul>
                     </li>
                     @if($day_status == true)
